@@ -7,7 +7,9 @@ namespace _08_01_Logger
     {
         static void Main(string[] args)
         {
-            Debugger.Log(0, null, "This is a test debug message.\n");
+            // TODO: What is Debugger and Debug different?
+            Debugger.Log(0, null, "This is a test debugger message.\n");
+            Debug.WriteLine("This is a test debug message.");
             Console.Read();
         }
     }
