@@ -8,10 +8,16 @@ namespace HostedService
     {
         static void Main(string[] args)
         {
+            var collector = new FakeMetricsCollector();
+
             new HostBuilder()
             .ConfigureServices(svcs =>
                 // svcs.AddSingleton<IHostedService, PerformanceMetricsCollector>())
-                svcs.AddHostedService<PerformanceMetricsCollector>())
+                svcs.AddSingleton<IProcessorMetricsCollector>(collector)
+                    .AddSingleton<IMemoryMetricsCollector>(collector)
+                    .AddSingleton<INetworkMetricsCollector>(collector)
+                    .AddSingleton<IMetricsDeliverer, FakeMetricsDeliverer>()
+                    .AddHostedService<PerformanceMetricsCollector>())
             .Build()
             .Run();
         }
