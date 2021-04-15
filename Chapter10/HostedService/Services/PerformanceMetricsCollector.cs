@@ -3,7 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 
-namespace HostedService
+namespace HostedService.Services
 {
     public sealed class PerformanceMetricsCollector : IHostedService
     {

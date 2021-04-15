@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace HostedService
+namespace HostedService.Services
 {
     public interface IMetricsDeliverer
     {

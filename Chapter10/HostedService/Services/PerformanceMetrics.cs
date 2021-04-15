@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace HostedService
+namespace HostedService.Services
 {
     public class PerformanceMetrics
     {

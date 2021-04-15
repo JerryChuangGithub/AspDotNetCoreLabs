@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-namespace HostedService
+namespace HostedService.Services
 {
     public class FakeMetricsDeliverer : IMetricsDeliverer
     {

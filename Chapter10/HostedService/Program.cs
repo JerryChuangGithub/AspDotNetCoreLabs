@@ -1,4 +1,5 @@
 ﻿using System;
+using HostedService.Services;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 

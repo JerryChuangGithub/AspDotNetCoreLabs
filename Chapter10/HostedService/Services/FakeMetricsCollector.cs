@@ -1,4 +1,4 @@
-﻿namespace HostedService
+﻿namespace HostedService.Services
 {
     public class FakeMetricsCollector :
         IProcessorMetricsCollector,

@@ -1,4 +1,4 @@
-﻿namespace HostedService
+﻿namespace HostedService.Services
 {
     public interface INetworkMetricsCollector
     {
