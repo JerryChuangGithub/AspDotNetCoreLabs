@@ -15,7 +15,10 @@ namespace HostedService
             var collector = new FakeMetricsCollector();
 
             new HostBuilder()
-            .ConfigureAppConfiguration(builder => builder.AddJsonFile("appsettings.json"))
+            .ConfigureHostConfiguration(builder => builder.AddCommandLine(args))
+            .ConfigureAppConfiguration((context, builder) => 
+                builder.AddJsonFile(path: "appsettings.json", optional: false)
+                    .AddJsonFile(path: $"appsettings.{context.HostingEnvironment.EnvironmentName}.json", optional: true))
             .ConfigureServices((context, svcs) =>
                 // svcs.AddSingleton<IHostedService, PerformanceMetricsCollector>())
                 svcs.AddSingleton<IProcessorMetricsCollector>(collector)
