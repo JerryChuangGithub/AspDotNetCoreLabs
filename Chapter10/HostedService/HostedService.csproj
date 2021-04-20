@@ -12,5 +12,7 @@
 
   <ItemGroup>
     <None Include="appSettings.json" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="appSettings.staging.json" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
+    <None Include="appSettings.Production.json" CopyToOutputDirectory="Always" CopyToPublishDirectory="Always" />
   </ItemGroup>
 </Project>
