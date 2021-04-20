@@ -1,9 +1,10 @@
 ﻿using System.Collections.Immutable;
 using System;
 using HostedService.Services;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using HostedService.Models;
 
 namespace HostedService
@@ -28,6 +29,7 @@ namespace HostedService
                     .AddHostedService<PerformanceMetricsCollector>()
                     .AddOptions()
                         .Configure<MetricsCollectionOptions>(context.Configuration.GetSection("MetricsCollection")))
+            .ConfigureLogging(builder => builder.AddConsole())
             .Build()
             .Run();
         }
